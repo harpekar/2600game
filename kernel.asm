@@ -2,7 +2,8 @@
   include "./dasm-src/machines/atari2600/vcs.h" ;Definitions for TIA register names
   include "./dasm-src/machines/atari2600/macro.h" ;DASM Macro definitiom
   
-  org 0
+  seg
+  org $F000
 
 Reset; System Reset 
 
@@ -20,7 +21,7 @@ StartOfFrame
   inx 
   stx COLUBK 
 
-  ldy #F
+  ldy #0
   sty COLUBK
 
   sta WSYNC
